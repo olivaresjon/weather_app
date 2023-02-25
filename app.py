@@ -3,7 +3,7 @@ import requests
 import json
 
 app = Flask(__name__)
-app.config['TEMPLATES_AUTO_RELOAD'] = True
+#app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 
 @app.route('/')
@@ -17,6 +17,6 @@ def weather():
     url = f'https://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}&units=metric'
     response = requests.get(url)
     weather_data = json.loads(response.text)
-    print(weather_data)  # print out the weather data
+    #print(weather_data)  # print out the weather data
 
     return render_template('weather.html', location=location, weather_data=weather_data)
