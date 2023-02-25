@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Home Page
+{% endblock %}
+
+{% block content %}
+  <h1>Welcome to the weather app!</h1>
+  <p>Please enter your location to get the current weather.</p>
+  <form action="{{ url_for('weather') }}" method="POST">
+    <label for="location">Location:</label>
+    <input type="text" name="location" id="location" required>
+    <input type="submit" value="Get Weather">
+  </form>
+  
+
+{% endblock %}

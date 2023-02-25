@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Weather for {{ location }}
+{% endblock %}
+
+{% block content %}
+  <h1>Current Weather for {{ location }}</h1>
+  <p>Temperature: {{ weather_data['main']['temp'] }}°C</p>
+  <p>Description: {{ weather_data['weather'][0]['description'] }}</p>
+{% endblock %}
+
